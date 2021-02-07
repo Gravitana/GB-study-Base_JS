@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	var rateOfEuro = 91.5624;
+	var rateOfDollar = 75.9423;
+
+	var rubles = prompt("Сколько рублей сконвертировать?");
+	rubles = parseFloat(rubles);
+
+	var euros = rubles / rateOfEuro;
+	var dollars = rubles / rateOfDollar;
+
+	alert("Результат: €" + euros.toFixed (2) + " или $" + dollars.toFixed (2));
+
+</script>

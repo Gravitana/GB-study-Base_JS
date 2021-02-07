@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	/*
+		Пользователь вводит сумму вклада и процент, который будет начисляться ежегодно. Отобразить размер вклада поочередно на ближайшие 5 лет.
+	 */
+
+	do {
+		deposit = +prompt(" Введите сумму вклада. Сумма должна быть числом больше нуля.");
+	} while (isNaN(deposit) || deposit <= 0)
+
+
+	do {
+		percent = +prompt("Введите ежегодный процент. Процент должен быть числом больше нуля и меньше 12.");
+	} while (isNaN(percent) || percent <= 0 || percent >= 12)
+
+
+	document.write("Размер вклада:<br>");
+
+	for (var i = 1; i <= 5; i++) {
+		deposit = deposit + (deposit * percent / 100);
+		document.write(i + "-й год: " + deposit + "<br>");
+	}
+
+
+</script>

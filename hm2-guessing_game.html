@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	/*
+		Сделать игру с двумя игроками и бесконечным числом попыток.
+		Сделайте возможность выйти из игры по желанию одного из игроков.
+	 */
+
+	var answer = parseInt(Math.random() * 100);
+	var gameOver = false;
+	var tryCount = 1;
+
+	do {
+
+		for (var userNumber = 1; userNumber <= 2; userNumber++) {
+
+			userAnswer = prompt("Ход " + userNumber + "-го игрока. Попытка №" + tryCount + "\nВведите число от 0 до 100\nДля выхода из игры введите букву Q");
+
+			if (userAnswer == "q" || userAnswer == "Q") {
+				gameOver = true;
+				break;
+			}
+
+			userAnswer = parseInt(userAnswer);
+
+			if (isNaN(userAnswer))
+				continue;
+
+			if (userAnswer == answer) {
+				alert("Поздравляю, Вы угадали!");
+				gameOver = true;
+				break;
+			} else if (userAnswer > answer) {
+				alert("Вы ввели слишком большое число. ");
+			} else if (userAnswer < answer) {
+				alert("Вы ввели слишком маленькое число. ");
+			}
+
+		}
+
+		tryCount++;
+
+	} while(!gameOver)
+
+	alert("Игра окончена. Совершено попыток: " + tryCount + ". Правильный ответ: " + answer);
+
+</script>
