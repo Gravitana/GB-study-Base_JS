@@ -1,0 +1,64 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	/*
+		a. Избавиться в игре в загадки от дублирования кода, используя массивы и функции.
+		b. Сделать так, чтобы программа поддерживала несколько правильных ответов на один и тот же вопрос. Все возможные варианты задаются программистом в коде программы.
+	 */
+
+	function runQuestion(question, answers){
+
+		var userAnswer = prompt(question + "\nДля выхода из игры введите «exit»");
+		userAnswer = userAnswer.toLowerCase();
+
+		if (userAnswer == "exit") {
+	 		return "exit";
+	 	} else {
+	 		for (var i = 0; i < answers.length; i++) {
+	 			var trueAnswer = answers[i];
+	 			if (userAnswer == trueAnswer) {
+			 		return 1;
+	 			}
+	 		}
+		}
+
+	 	return 0;
+	}
+
+	var gameData = [
+	 	[
+			"Кто на себе свой дом таскает?",
+	 		["улитка", "черепаха"],
+	 	],
+	 	[
+	 		"В гору бегом, а с горы кувырком! Кто это?",
+	 		["заяц"],
+	 	],
+	 	[
+			"Два конца, два кольца, а посредине гвоздик. Что это?",
+	 		["ножницы"],
+	 	],
+	 	[
+			"Чем больше из неё берёшь, тем больше она становится. Что это?",
+	 		["яма"],
+	 	],
+	 ];
+
+	var correctAnswers = 0;
+
+ 	for (var i = 0; i < gameData.length; i++) {
+ 		result = runQuestion(gameData[i][0], gameData[i][1]);
+ 		if (result == 'exit') {
+ 			break;
+ 		} else if (result == 1){
+			alert("Правильно!");
+ 		} else {
+ 			alert("К сожалению, Вы не угадали. Правильный ответ: " + gameData[i][1][0]);
+ 		}
+
+ 		correctAnswers += result;
+ 	}
+
+	alert("Игра окончена. Количество правильных ответов: " + correctAnswers);
+
+</script>

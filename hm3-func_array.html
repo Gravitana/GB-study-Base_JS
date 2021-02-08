@@ -1,0 +1,96 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+	/*
+		a. Написать функцию, которая принимает в качестве параметра число n. Результатом работы функции является массив из N элементов со значениями 1, 2, 3… n.
+		b. Написать функцию, которая принимает массив чисел. Результатом работы функции является сумма чисел этого массива.
+		c. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает максимальное число.
+		d. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает минимальное число.
+		f. Написать функцию, которая на вход получает массив целых чисел, и в качестве результата возвращает только четные числа из этого массива. Чтобы определить четность числа, воспользуйтесь оператором для подсчета остатка от деления: x % 2. Если остаток от деления числа на 2 равен 0, число будет четное.
+	 */
+
+
+	function makeArray(length){
+		var arr = [];
+		for (var i = 1; i <= length; i++) {
+			arr.push(i);
+		}
+		return arr;
+	}
+
+	function sumArray(arr){
+		var sum = 0;
+		for (var i = 0; i < arr.length; i++) {
+			sum += arr[i];
+		}
+		return sum;
+	}
+
+	function shakeArray(arr){
+		var shakedArray = [];
+		while (arr.length > 0){
+			var i = parseInt(Math.random() * arr.length);
+			shakedArray.push(arr[i]);
+			arr.splice(i, 1);
+		}
+		return shakedArray;
+	}
+
+	function getRandomNumber(max){
+		return Math.round(Math.random() * max);
+	}
+
+	function maxArray(arr){
+		var max = arr[0];
+		for (var i = 1; i < arr.length; i++) {
+			if (arr[i] > max)
+				max = arr[i];
+		}
+		return max;
+	}
+
+	function minArray(arr){
+		var min = arr[0];
+		for (var i = 1; i < arr.length; i++) {
+			if (arr[i] < min)
+				min = arr[i];
+		}
+		return min;
+	}
+
+	function evenArray(arr){
+		var even = [];
+		for (var i = 0; i < arr.length; i++) {
+			if (arr[i] % 2 == 0)
+				even.push(arr[i]);
+		}
+		return even;
+	}
+
+
+	do{
+		var length = +prompt("Введите целое число больше нуля");
+	}while (length <=0 || isNaN(length))
+
+	document.writeln("Введено число " + length + "<br>");
+
+	var arr = makeArray(length);
+	document.writeln("Сгенерирован массив " + arr + "<br>");
+
+	var sum = sumArray(arr);
+	document.writeln("Сумма элементов равна " + sum + "<br>");
+
+ 	// TODO выяснить как не уничтожить оригинальный массив при вырезании элементов
+	var shakedArray = shakeArray(arr);
+	document.writeln("Перемешиваем массив, чтобы дальше было интереснее: " + shakedArray + "<br>");
+
+	var max = maxArray(shakedArray);
+	document.writeln("Максимум: " + max + "<br>");
+
+	var min = minArray(shakedArray);
+	document.writeln("Минимум: " + min + "<br>");
+
+	var even = evenArray(shakedArray);
+	document.writeln("Чётные значения: " + even + "<br>");
+
+</script>
