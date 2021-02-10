@@ -35,9 +35,9 @@
 
 <div class="content">
 	<div class="header">
-		<a href="index.html">Главная</a>
+		<a href="index.php">Главная</a>
 		<a href="#">Загадки</a>
-		<a href="guess.html">Угадайка</a>
+		<a href="guess.php">Угадайка</a>
 	</div>
 
 <div class="contentWrap">
