@@ -8,14 +8,14 @@
 <body>
 
 <div class="content">
-	<div class="header">
-        <?php include('header.php') ?>
-	</div>
+    <div class="header">
+        <?php include('partials\header.php') ?>
+    </div>
 
-	<h1>Личный сайт студента GeekBrains</h1>
+    <h1>Личный сайт студента GeekBrains</h1>
 
 	<div class="center">
-	<img src="img/programmer.png">
+	    <img src="img/programmer.png" alt="">
 		<div class="box_text">
 			<p><b>Добрый день</b>. Меня зовут <i>Виталий Грахов</i>. Хоть это и не моя фотография, но она хорошо отражает то состояние,
 				когда только начинаешь погружаться в мир программирования.</p>
@@ -32,7 +32,7 @@
 	</div>
 </div>
 <div class="footer">
-	Copyright &copy; Vitaliy Grakhov
+    <?php include('partials\footer.php') ?>
 <div>
 
 

@@ -48,13 +48,12 @@
 <body>
 
 <div class="content">
-	<div class="header">
-		<a href="index.php">Главная</a>
-		<a href="puzzle.php">Загадки</a>
-		<a href="#">Угадайка</a>
-	</div>
+    <div class="header">
+        <?php include('partials\header.php') ?>
+    </div>
 
-<div class="contentWrap">
+
+    <div class="contentWrap">
     <div class="content">
         <div class="center">
 
@@ -76,7 +75,7 @@
 
 </div>
 <div class="footer">
-	Copyright &copy; Vasily Pupkin
+    <?php include('partials\footer.php') ?>
 <div>
 
 
